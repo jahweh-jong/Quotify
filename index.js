@@ -17,7 +17,7 @@ document.addEventListener('alpine:init', () => {
                   } else if (quoteType === 'double') {
                     quote = '"';
                   }
-                  const cleanIDs = IDs.replace(/['"]/g, '')
+                  const cleanIDs = IDs.replace(/['",-/(/)]/g, '')
                   const idArray = cleanIDs.split('\n').filter(id => id.trim() !== "");
                   const quotedStrings = idArray.map(id => quote + id + quote).join(',\n');
                   
@@ -52,7 +52,7 @@ document.addEventListener('alpine:init', () => {
             if (this.rankingsForm.keywords && this.rankingsForm.retailer){ 
                 const keywords = this.rankingsForm.keywords
                 const retailer = this.rankingsForm.retailer
-                const cleanKeywords = keywords.replace(/['"]/g, '')
+                const cleanKeywords = keywords.replace(/['",-/(/)]/g, '')
                 const keywordsArray = cleanKeywords.split('\n').filter(kw => kw.trim() !== "");
                 const objArray = keywordsArray.map(kw => ({ 
                     "keyword" : kw,

@@ -17,7 +17,7 @@ document.addEventListener('alpine:init', () => {
                   } else if (quoteType === 'double') {
                     quote = '"';
                   }
-                  const cleanIDs = IDs.replace(/['",-/(/)]/g, '')
+                  const cleanIDs = IDs.replace(/['",/(/)]/g, '')
                   const idArray = cleanIDs.split('\n').filter(id => id.trim() !== "");
                   const quotedStrings = idArray.map(id => quote + id + quote).join(',\n');
                   

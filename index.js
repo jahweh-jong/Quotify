@@ -52,7 +52,7 @@ document.addEventListener('alpine:init', () => {
             if (this.rankingsForm.keywords && this.rankingsForm.retailer){ 
                 const keywords = this.rankingsForm.keywords
                 const retailer = this.rankingsForm.retailer
-                const cleanKeywords = keywords.replace(/['",-/(/)]/g, '')
+                const cleanKeywords = keywords.replace(/['",/(/)]/g, '')
                 const keywordsArray = cleanKeywords.split('\n').filter(kw => kw.trim() !== "");
                 const objArray = keywordsArray.map(kw => ({ 
                     "keyword" : kw,

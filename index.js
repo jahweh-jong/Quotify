@@ -22,7 +22,7 @@ document.addEventListener('alpine:init', () => {
                   const quotedStrings = idArray.map(id => quote + id + quote).join(',\n');
                   
                   this.result = quotedStrings
-                  
+                  this.copyToClipboard()
             }else{
                 console.log('Empty Item IDs')
             }
@@ -59,6 +59,7 @@ document.addEventListener('alpine:init', () => {
                     "retailer" : retailer
                 }))
                 this.result = JSON.stringify(objArray, null, 4) 
+                this.copyToClipboard()
             }else{
                 console.log('Empty Keyword or Retailer field')
             }
